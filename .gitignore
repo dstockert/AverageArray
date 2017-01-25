@@ -1,0 +1,46 @@
+//dylan stockert
+//AverageArray
+//1/24/17
+
+//import TerminalIO.KeyboardReader;
+import java.util.Scanner;
+
+public class AverageArray {
+    
+    public static void main(String args[]) {
+        
+        //KeyboardReader reader = new KeyboardReader();
+        Scanner scan = new Scanner(System.in);
+        
+        double[] inputList = new double[10];
+        double input;
+        
+        for (int i = 0; i < 10; i++) {
+            //input = reader.readDouble("Please enter number " + (i + 1) + ": ");
+            System.out.print("Please enter number " + (i + 1) + ": ");
+            input = scan.nextDouble();
+            inputList[i] = input;
+        }
+        
+        print(inputList);
+    }
+    
+    public static void print(double[] list) {
+        
+        double total = 0, average;
+        
+        for (int i = 0; i < 10; i ++) {
+            total += list[i];
+        }
+        
+        average = total / 10;
+        
+        System.out.println("Average = " +  average);
+        System.out.print("The numbers that are larger than your average are: ");
+        
+        for (int i = 0; i < 10; i++) {
+            if (list[i] > average)
+                System.out.print(list[i] + ", ");
+        }
+    }
+}
